@@ -13,7 +13,7 @@ StudentServiceImpl
 - getStudentGpa(Student student, Integer academicYear)
 - getStudentReport(Student student);
 ```
-<b><i>Hint</i></b> you can mock your own service (as some of the methods here refer to it own service) using the <code>Mockito.spy<code> method. The example is shown in the test folder The StudentServiceImplTest.
+<b><i>Hint</i></b> you can mock your own service (as some of the methods here refer to it own service) using the <code>Mockito.spy</code> method. The example is shown in the test folder The StudentServiceImplTest.
 
 The grading
 After you complete the test, the mutate code will be given to you with 5 errors. If your test case can find 5 error. You will get 10 point.
