@@ -28,6 +28,24 @@ public class StudentServiceImplTest {
         when(studentService.getRegisterYear(courseEnrolments)).thenReturn(Arrays.asList(2554,2555,2556));
         Student student = new Student();
         StudentReport studentReport = new StudentReport();
-        assertThat(studentService.getStudentReport(student),is(studentReport));
+        studentReport.setStudent(student);
+        assertThat(studentService.getStudentReport(student), is(studentReport));
+    }
+
+    @Test
+    public void testGetStudentGpa1Paramter() throws Exception {
+        StudentServiceImpl studentService = spy(StudentServiceImpl.class);
+        List<CourseEnrolment> courseEnrolments = new ArrayList<>();
+        Student student = new Student();
+        assertThat(studentService.getStudentGpa(student),is(0.00));
+
+    }
+
+    @Test
+    public void testGetStudentGpa2Parameters() throws Exception {
+        StudentServiceImpl studentService = spy(StudentServiceImpl.class);
+        Student student = new Student();
+        assertThat(studentService.getStudentGpa(student,2556),is(0.00));
+
     }
 }
